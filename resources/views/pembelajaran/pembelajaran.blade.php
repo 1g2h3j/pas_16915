@@ -10,7 +10,7 @@
       <div class="card">
           <div class="card-body">
 
-              <h4 class="card-title mb-3">Data pembelajaran
+              <h4 class="card-title mb-3">Data Pembelajaran
                 <span>
                   <a href="{{ route('pembelajaran.create') }}" class="btn btn-primary waves-effect waves-light btn-sm"><i class="fas fa-plus"></i></a>
                 </span>

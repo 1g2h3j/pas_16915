@@ -10,7 +10,7 @@
       <div class="card">
           <div class="card-body">
 
-              <h4 class="card-title mb-3">Data mapel
+              <h4 class="card-title mb-3">Data Mata Pelajaran
                 <span>
                   <a href="{{ route('mapel.create') }}" class="btn btn-primary waves-effect waves-light btn-sm"><i class="fas fa-plus"></i></a>
                 </span>
