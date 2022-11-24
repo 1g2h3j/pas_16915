@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembelajaran;
 use Illuminate\Http\Request;
 
 class PembelajaranContoller extends Controller
@@ -13,7 +14,9 @@ class PembelajaranContoller extends Controller
      */
     public function index()
     {
-        //
+        $pembelajaran = Pembelajaran::all();
+
+        return view('pembelajaran.pembelajaran', compact('pembelajaran'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PembelajaranContoller extends Controller
      */
     public function create()
     {
-        //
+        return view('pembelajaran.tambah');
     }
 
     /**
@@ -34,16 +37,18 @@ class PembelajaranContoller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pembelajaran = Pembelajaran::create($request->all());
+
+        return redirect()->route('pembelajaran.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_pembelajaran
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_pembelajaran)
     {
         //
     }
@@ -51,33 +56,46 @@ class PembelajaranContoller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_pembelajaran
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_pembelajaran)
     {
-        //
+        $pembelajaran = Pembelajaran::find($id_pembelajaran);
+
+        return view('pembelajaran.ubah', compact('pembelajaran'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $id_pembelajaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_pembelajaran)
     {
-        //
+        $pembelajaran = Pembelajaran::find($id_pembelajaran); 
+        $pembelajaran->update($request->all());
+
+        return redirect()->route('pembelajaran.index');
+    }
+
+    public function delete(Request $request, $id_pembelajaran)
+    {
+        $pembelajaran = Pembelajaran::find($id_pembelajaran);
+        $pembelajaran->delete();
+
+        return redirect()->route('pembelajaran.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $id_pembelajaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_pembelajaran)
     {
         //
     }

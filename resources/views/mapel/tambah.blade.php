@@ -11,13 +11,13 @@
                 <form action="{{ route('mapel.store') }}" method="POST">
                     @csrf
                     <div class="row mb-4">
-                        <label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
+                        <label for="inputNama" class="col-sm-2 col-form-label">Nama Mapel</label>
                         <div class="col-sm-10">
                             <input name="nama_mapel" type="text" class="form-control" id="inputNama">
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="inputNip" class="col-sm-2 col-form-label">NIS</label>
+                        <label for="inputNip" class="col-sm-2 col-form-label">Kode Mapel</label>
                         <div class="col-sm-10">
                             <input name="kode_mapel" type="text" class="form-control" id="inputNip">
                         </div>

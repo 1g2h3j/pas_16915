@@ -12,13 +12,13 @@
                     @csrf
                     @method('put')
                     <div class="row mb-4">
-                        <label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
+                        <label for="inputNama" class="col-sm-2 col-form-label">Nama Mapel</label>
                         <div class="col-sm-10">
                             <input name="nama_mapel" type="text" class="form-control" id="inputNama" value="{{ $mapel->nama_mapel }}">
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="inputNis" class="col-sm-2 col-form-label">NIP</label>
+                        <label for="inputNis" class="col-sm-2 col-form-label">Kode Mapel</label>
                         <div class="col-sm-10">
                             <input name="nip" type="text" class="form-control" id="inputNis" value="{{ $mapel->kode_mapel }}">
                         </div>
