@@ -32,10 +32,10 @@
                 @foreach($pembelajaran as $datas)
                 <tr>
                   <td>{{$i}}</td>
-                  {{-- <td>{{$datas->nama_pembelajaran}}</td>
-                  <td>{{$datas->nama_pembelajaran}}</td>
-                  <td>{{$datas->nama_pembelajaran}}</td>
-                  <td>{{$datas->kode_pembelajaran}}</td> --}}
+                  <td>{{$datas->guru->nama_guru}}</td>
+                  <td>{{$datas->mapel->nama_mapel}}</td>
+                  <td>{{$datas->hari}}</td>
+                  <td>{{$datas->tanggal}}</td>
                   <td>
                     <div>
                       <a href="{{ url('/pembelajaran/'.$datas->id_pembelajaran.'/edit') }}" class="btn btn-sm btn-warning text-white">Edit <i class="fas fa-pen"></i></a>

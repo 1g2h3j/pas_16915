@@ -15,8 +15,8 @@ class CreatePembelajaransTable extends Migration
     {
         Schema::create('pembelajarans', function (Blueprint $table) {
             $table->id('id_pembelajaran');
-            $table->foreignId('id_guru')->unique();
-            $table->foreignId('id_mapel')->unique();
+            $table->foreignId('id_guru');
+            $table->foreignId('id_mapel');
             $table->char('hari');
             $table->date('tanggal');
             $table->timestamps();

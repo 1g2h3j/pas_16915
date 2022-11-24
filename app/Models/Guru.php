@@ -19,4 +19,9 @@ class Guru extends Model
         "jk",
         "alamat",
     ];
+
+    public function pembelajaran()
+    {
+        return $this->hasMany(Pembelajaran::class, "id_pembelajaran");
+    }
 }

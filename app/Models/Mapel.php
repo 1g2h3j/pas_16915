@@ -17,4 +17,9 @@ class Mapel extends Model
         "nama_mapel",
         "kode_mapel",
     ];
+
+    public function pembelajaran()
+    {
+        return $this->hasMany(Pembelajaran::class, "id_pembelajaran");
+    }
 }

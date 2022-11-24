@@ -19,4 +19,13 @@ class Pembelajaran extends Model
         "hari",
         "tanggal",
     ];
+
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class, 'id_guru');
+    }
+    public function mapel()
+    {
+        return $this->belongsTo(Mapel::class, 'id_mapel');
+    }
 }

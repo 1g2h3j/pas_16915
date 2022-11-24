@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
+use App\Models\Mapel;
 use App\Models\Pembelajaran;
 use Illuminate\Http\Request;
 
@@ -15,6 +17,7 @@ class PembelajaranContoller extends Controller
     public function index()
     {
         $pembelajaran = Pembelajaran::all();
+        // return $pembelajaran;
 
         return view('pembelajaran.pembelajaran', compact('pembelajaran'));
     }
@@ -26,7 +29,9 @@ class PembelajaranContoller extends Controller
      */
     public function create()
     {
-        return view('pembelajaran.tambah');
+        $guru = Guru::all();
+        $mapel = Mapel::all();
+        return view('pembelajaran.tambah', compact('guru', 'mapel'));
     }
 
     /**
