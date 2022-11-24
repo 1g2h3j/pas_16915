@@ -18,15 +18,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::resource('guru',GuruContoller::class);
-Route::resource('siswa',SiswaContoller::class);
-Route::resource('mapel',MapelContoller::class);
-Route::resource('pembelajaran',PembelajaranContoller::class);
 
-Route::get('/guru/{guru}/delete',[GuruContoller::class,'delete']);
-Route::get('/siswa/{siswa}/delete',[SiswaContoller::class,'delete']);
-Route::get('/mapel/{mapel}/delete',[MapelContoller::class,'delete']);
-Route::get('/pembelajaran/{pembelajaran}/delete',[PembelajaranContoller::class,'delete']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::resource('guru',GuruContoller::class);
+    Route::resource('siswa',SiswaContoller::class);
+    Route::resource('mapel',MapelContoller::class);
+    Route::resource('pembelajaran',PembelajaranContoller::class);   
+
+    Route::get('/guru/{guru}/delete',[GuruContoller::class,'delete']);
+    Route::get('/siswa/{siswa}/delete',[SiswaContoller::class,'delete']);
+    Route::get('/mapel/{mapel}/delete',[MapelContoller::class,'delete']);
+    Route::get('/pembelajaran/{pembelajaran}/delete',[PembelajaranContoller::class,'delete']);
+});

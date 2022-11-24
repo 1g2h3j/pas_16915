@@ -7,7 +7,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Horizontal Form Layout</h4>
+                <h4 class="card-title mb-4">Horizontol Form Layout</h4>
                 <form action="{{ route('pembelajaran.store') }}" method="POST">
                     @csrf
                     <div class="row mb-4">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                     <div class="row mb-4">
-                        <label for="formrow-inputState" class="col-sm-2 col-form-label">Nama Guru</label>
+                        <label for="formrow-inputState" class="col-sm-2 col-form-label">Mata Pelajaran</label>
                     <div class="col-sm-10">
                         <select id="formrow-inputState" class="form-select" name="id_mapel" required>
                             <option value="0" selected></option>

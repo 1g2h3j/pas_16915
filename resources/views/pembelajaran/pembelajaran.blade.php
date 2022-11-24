@@ -38,7 +38,7 @@
                   <td>{{$datas->tanggal}}</td>
                   <td>
                     <div>
-                      <a href="{{ url('/pembelajaran/'.$datas->id_pembelajaran.'/edit') }}" class="btn btn-sm btn-warning text-white">Edit <i class="fas fa-pen"></i></a>
+                      {{-- <a href="{{ url('/pembelajaran/'.$datas->id_pembelajaran.'/edit') }}" class="btn btn-sm btn-warning text-white">Edit <i class="fas fa-pen"></i></a> --}}
                       <a href="{{ url('/pembelajaran/'.$datas->id_pembelajaran.'/delete') }}" class="btn btn-sm btn-danger">Delete <i class="fas fa-trash"></i></a>
                     </div>
                   </td>
