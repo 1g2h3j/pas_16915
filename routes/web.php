@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\GuruContoller;
-use App\Http\Controllers\MapelContoller;
-use App\Http\Controllers\PembelajaranContoller;
-use App\Http\Controllers\SiswaContoller;
+use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\SuperadminsController;
+use App\Http\Controllers\UserController;
+use App\Models\Admins;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('view_user.login');
+    // return view('blogs.index');
 });
 
 
@@ -30,14 +32,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    
-    Route::resource('guru',GuruContoller::class);
-    Route::resource('siswa',SiswaContoller::class);
-    Route::resource('mapel',MapelContoller::class);
-    Route::resource('pembelajaran',PembelajaranContoller::class);   
-
-    Route::get('/guru/{guru}/delete',[GuruContoller::class,'delete']);
-    Route::get('/siswa/{siswa}/delete',[SiswaContoller::class,'delete']);
-    Route::get('/mapel/{mapel}/delete',[MapelContoller::class,'delete']);
-    Route::get('/pembelajaran/{pembelajaran}/delete',[PembelajaranContoller::class,'delete']);
 });
+Route::resource('admin',AdminsController::class);
+Route::resource('superadmin',SuperadminsController::class);
+Route::resource('user',UserController::class);
+Route::resource('blog',BlogsController::class);
+
+Route::get('/user/{user}/delete',[UserController::class,'delete']);
+Route::get('/admin/{admin}/delete',[AdminsController::class,'delete']);
+Route::get('/blog/{blog}/delete',[BlogsController::class,'delete']);
